@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,71 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3UN-M6-eSy">
+                                <rect key="frame" x="48" y="40" width="280" height="350"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="5NW-KS-cB3"/>
+                                    <constraint firstAttribute="width" constant="280" id="OKc-3X-15w"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on Start! to read a QR Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7o-Np-Bgj">
+                                <rect key="frame" x="64" y="164" width="247" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="0TM-Ny-oYk"/>
+                                    <constraint firstAttribute="height" constant="21" id="YFp-Q0-KqM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR Code Reader is not yet running…" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFq-Uf-Bkl">
+                                <rect key="frame" x="16" y="407" width="343" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="EZq-Kv-1wb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wo-Z0-OTl">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="45N-TY-x79"/>
+                                    <barButtonItem title="Start!" id="rfS-r2-rms">
+                                        <connections>
+                                            <action selector="startStopReading:" destination="BYZ-38-t0r" id="ql1-lY-6nc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3Uy-El-LMu"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MFq-Uf-Bkl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3kp-XS-LKw"/>
+                            <constraint firstItem="MFq-Uf-Bkl" firstAttribute="bottom" secondItem="3wo-Z0-OTl" secondAttribute="top" id="50a-xM-nzn"/>
+                            <constraint firstItem="f7o-Np-Bgj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="144" id="8Nh-nx-rKc"/>
+                            <constraint firstItem="3wo-Z0-OTl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H4Y-3T-wMn"/>
+                            <constraint firstItem="f7o-Np-Bgj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVG-go-1x8"/>
+                            <constraint firstItem="MFq-Uf-Bkl" firstAttribute="centerX" secondItem="3wo-Z0-OTl" secondAttribute="centerX" id="L70-fx-SrR"/>
+                            <constraint firstItem="3UN-M6-eSy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="dVJ-dF-fXa"/>
+                            <constraint firstItem="3wo-Z0-OTl" firstAttribute="centerX" secondItem="f7o-Np-Bgj" secondAttribute="centerX" id="qo7-w5-CNb"/>
+                            <constraint firstItem="3wo-Z0-OTl" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="uKZ-SY-x9u"/>
+                            <constraint firstItem="3UN-M6-eSy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v5C-Lg-liQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonStart" destination="rfS-r2-rms" id="cYZ-qS-mgg"/>
+                        <outlet property="labelInfo" destination="f7o-Np-Bgj" id="3xQ-Kb-GiP"/>
+                        <outlet property="labelStatus" destination="MFq-Uf-Bkl" id="stb-Ll-j3h"/>
+                        <outlet property="viewPreview" destination="3UN-M6-eSy" id="rAp-TD-fPw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
         </scene>
     </scenes>
 </document>
